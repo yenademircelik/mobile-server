@@ -7,6 +7,7 @@ import { Work } from 'src/modules/works/works.entity';
 import { WorkSteps } from 'src/modules/work-steps/work-steps.entity';
 import { WorkProducts } from 'src/modules/work-products/work-products.entity';
 import { Products } from 'src/modules/products/products.entity';
+import { QaulityControl } from 'src/modules/quality-control/quality-control.entity';
 
 export const databaseProviders = [
   {
@@ -35,6 +36,7 @@ export const databaseProviders = [
         WorkSteps,
         WorkProducts,
         Products,
+        QaulityControl,
       ]);
       await sequelize.sync();
       return sequelize;

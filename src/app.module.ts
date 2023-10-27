@@ -8,6 +8,7 @@ import { WorksModule } from './modules/works/works.module';
 import { WorkStepsModule } from './modules/work-steps/work-steps.module';
 import { WorkProductsModule } from './modules/work-products/work-products.module';
 import { ProductsModule } from './modules/products/products.module';
+import { QualityControlModule } from './modules/quality-control/quality-control.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ProductsModule } from './modules/products/products.module';
     WorkStepsModule,
     WorkProductsModule,
     ProductsModule,
+    QualityControlModule,
   ],
   controllers: [],
   providers: [],
