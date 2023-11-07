@@ -9,6 +9,7 @@ import { WorkStepsModule } from './modules/work-steps/work-steps.module';
 import { WorkProductsModule } from './modules/work-products/work-products.module';
 import { ProductsModule } from './modules/products/products.module';
 import { QualityControlModule } from './modules/quality-control/quality-control.module';
+import { ImagesModule } from './modules/images/images.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { QualityControlModule } from './modules/quality-control/quality-control.
     WorkProductsModule,
     ProductsModule,
     QualityControlModule,
+    ImagesModule,
   ],
   controllers: [],
   providers: [],
