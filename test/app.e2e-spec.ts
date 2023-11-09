@@ -116,4 +116,44 @@ describe('AppController (e2e)', () => {
       });
     });
   });
+
+  describe('WorkSteps', () => {
+    describe('GetWorkStepByIds', () => {
+      it('testing get workSteps by ids', () => {
+        return pactum
+          .spec()
+          .get('/work-steps/{ids}')
+          .withHeaders({ Authorization: 'Bearer $S{userAt}' })
+          .withPathParams('ids', '1,2')
+          .inspect();
+      });
+    });
+  });
+
+  describe('WorkProducts', () => {
+    describe('GetWorkProductsByIds', () => {
+      it('testing get work products by ids', () => {
+        return pactum
+          .spec()
+          .get('/work-products/{ids}')
+          .withHeaders({ Authorization: 'Bearer $S{userAt}' })
+          .withPathParams('ids', '1,2')
+          .inspect();
+      });
+    });
+    describe('UpdateWorkProductsStatus', () => {
+      it('testing update work products status', () => {
+        const updatedStatus = { status: 'updatedStatus' };
+
+        return pactum
+          .spec()
+          .put('/work-products/{workId}/products/{productId}')
+          .withHeaders({ Authorization: 'Bearer $S{userAt}' })
+          .withPathParams('workId', '1')
+          .withPathParams('productId', '1')
+          .withBody(updatedStatus)
+          .inspect();
+      });
+    });
+  });
 });

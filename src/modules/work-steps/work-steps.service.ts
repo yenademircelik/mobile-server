@@ -20,7 +20,7 @@ export class WorkStepsService {
     });
     if (works.length === 0) {
       throw new NotFoundException(
-        `Selected work with this ids ${ids} can not be found !`,
+        `Selected work steps with this ids ${ids} can not be found !`,
       );
     }
     return works;
