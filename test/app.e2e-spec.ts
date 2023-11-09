@@ -69,4 +69,51 @@ describe('AppController (e2e)', () => {
       });
     });
   });
+
+  describe('Users', () => {
+    describe('GetUserInfo', () => {
+      it('testing get users info who logged in', () => {
+        return pactum
+          .spec()
+          .get('/users/info')
+          .withHeaders({ Authorization: 'Bearer $S{userAt}' })
+          .inspect();
+      });
+    });
+  });
+
+  describe('Vendors', () => {
+    describe('GetVendorById', () => {
+      it('testing get vendors info', () => {
+        return pactum
+          .spec()
+          .get('/vendor/{vendorId}')
+          .withHeaders({ Authorization: 'Bearer $S{userAt}' })
+          .withPathParams('vendorId', '1')
+          .inspect();
+      });
+    });
+  });
+  describe('Works', () => {
+    describe('GetWorkByUserId', () => {
+      it('testing get user by foremanId', () => {
+        return pactum
+          .spec()
+          .get('/works/byUser/{foremanId}')
+          .withHeaders({ Authorization: 'Bearer $S{userAt}' })
+          .withPathParams('foremanId', '2')
+          .inspect();
+      });
+    });
+    describe('GetWorkByWorkId', () => {
+      it('testing get work bu workId', () => {
+        return pactum
+          .spec()
+          .get('/works/{workId}')
+          .withHeaders({ Authorization: 'Bearer $S{userAt}' })
+          .withPathParams('workId', '1')
+          .inspect();
+      });
+    });
+  });
 });
